@@ -1,0 +1,110 @@
+/* 全局样式 */
+:root {
+  --el-color-primary: #409EFF;
+  --el-color-success: #67C23A;
+  --el-color-warning: #E6A23C;
+  --el-color-danger: #F56C6C;
+  --el-color-info: #909399;
+
+  /* Material Design 3 圆角 */
+  --md3-radius-small: 12px;   /* small */
+  --md3-radius-medium: 20px;  /* medium - 用于按钮、输入框、下拉菜单、表格 */
+  --md3-radius-large: 24px;   /* large - 用于卡片、弹窗 */
+
+  /* Material Design 3 阴影 */
+  --md3-shadow-elevated: 0 4px 8px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.08);
+  --md3-shadow-top-bar: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Material Design 3 风格覆盖 */
+
+/* 下拉菜单最小宽度 ≥ 6em */
+.el-select, .el-select-v2 {
+  min-width: 6em;
+}
+
+/* 按钮 - 中圆角 (20px) */
+.el-button {
+  border-radius: var(--md3-radius-medium) !important;
+}
+
+/* 输入框、文本域 - 胶囊样式 */
+html body .el-input__wrapper,
+html body .el-textarea__inner {
+  border-radius: var(--md3-radius-medium) !important;
+}
+
+/* 下拉框输入框 - 胶囊样式 */
+html body .el-select .el-input__wrapper {
+  border-radius: var(--md3-radius-medium) !important;
+  overflow: hidden;
+}
+
+/* 下拉面板 - 独立胶囊形状 */
+html body .el-select-dropdown {
+  border-radius: var(--md3-radius-medium) !important;
+  overflow: hidden;
+  /* 与输入框保持一点间距 */
+  margin-top: 4px !important;
+}
+
+/* 下拉面板项 */
+html body .el-select-dropdown__item {
+  border-radius: 0;
+}
+
+/* 卡片、弹窗 - 大圆角 (24px) */
+.el-card,
+.el-dialog,
+.el-message-box {
+  border-radius: var(--md3-radius-large) !important;
+}
+
+/* 表格 - 中圆角 (20px) */
+.el-table {
+  border-radius: var(--md3-radius-medium);
+  overflow: hidden;
+}
+
+/* 侧边栏 - 阴影 */
+.el-aside,
+aside,
+.sidebar,
+.app-sidebar {
+  box-shadow: var(--md3-shadow-elevated);
+}
+
+/* 顶栏 - 阴影 */
+.el-header,
+header,
+.top-header,
+.app-header {
+  box-shadow: var(--md3-shadow-top-bar);
+}

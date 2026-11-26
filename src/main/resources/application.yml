@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: ai-gateway-mcp
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:dev}
+  config:
+    import:
+      - optional:classpath:application-db.yml
+      - optional:classpath:application-migration.yml
+      - optional:classpath:application-dev.yml
+      - optional:classpath:application-integration.yml
+      - optional:classpath:application-mysql.yml
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: Asia/Shanghai
+
+server:
+  port: 8080
+
+logging:
+  level:
+    root: INFO
+    org.veronicadavichi: DEBUG
+    org.veronicadavichi.config.mcp: INFO
+    org.springframework: WARN
+    org.apache.catalina: WARN
+    org.apache.tomcat: WARN
+    com.mybatis: WARN
+    commons-logging: WARN
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info

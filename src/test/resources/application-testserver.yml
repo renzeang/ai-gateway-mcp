@@ -1,0 +1,23 @@
+# RestServer 独立测试配置
+server:
+  port: 1234
+
+spring:
+  application:
+    name: test-rest-server
+  # 使用 H2 内存数据库，避免连接 MySQL
+  datasource:
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+  # 禁用 Flyway 迁移
+  flyway:
+    enabled: false
+
+# 禁用 MyBatis-Flex 自动配置
+mybatis-flex:
+  enabled: false

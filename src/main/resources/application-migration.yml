@@ -1,0 +1,5 @@
+# Flyway 通用配置（具体 enabled 状态在各 profile 中配置）
+spring:
+  flyway:
+    locations: classpath:db/migration
+    baseline-on-migrate: true

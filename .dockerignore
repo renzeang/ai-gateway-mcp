@@ -1,0 +1,35 @@
+# Git
+.git
+.gitignore
+
+# Docker
+Dockerfile
+.dockerignore
+docker-compose*.yml
+
+# IDE
+.idea
+.vscode
+*.iml
+
+# Maven (保留 target 用于 Dockerfile.local)
+# target/ 只在完整构建时忽略，本地构建时需要
+target/*.jar.original
+
+# Node
+front_end/node_modules
+# front_end/dist 保留用于 Dockerfile.local
+front_end/npm-debug.log
+front_end/yarn-error.log
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test
+front_end/test-results
+front_end/playwright-report
